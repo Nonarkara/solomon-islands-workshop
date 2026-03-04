@@ -1,0 +1,1361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Strategic roadmap for whole-of-government digital transformation in Solomon Islands, synthesized from the Honiara workshop (4-5 December 2025)." />
+    <meta name="theme-color" content="#0b1a2b" />
+    <title>Digitalizing Solomon Islands | Strategic Workshop Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+:root {
+    --bg: #f5f1eb;
+    --bg-alt: #ece7df;
+    --paper: #ffffff;
+    --ink: #1a1a2e;
+    --ink-soft: #4a5568;
+    --ink-muted: #718096;
+    --line: #d6cfc4;
+    --accent: #00857c;
+    --accent-glow: #00b3a6;
+    --coral: #e05a3a;
+    --gold: #c9952b;
+    --deep: #0b1a2b;
+    --deep-mid: #132d45;
+    --deep-soft: #1a3a55;
+    --max: min(1200px, 92vw);
+    --max-narrow: min(860px, 88vw);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --font-display: "Space Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; width: 100%; }
+h1, h2, h3, p, ul, li, figure, dl, dt, dd, table { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.wrap { width: var(--max); margin-inline: auto; }
+.wrap-narrow { width: var(--max-narrow); margin-inline: auto; }
+
+.skip-link {
+    position: fixed;
+    top: 0.8rem;
+    left: 0.8rem;
+    z-index: 60;
+    background: var(--deep);
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #ffffff44;
+    border-radius: 999px;
+    padding: 0.45rem 0.72rem;
+    font-size: 0.82rem;
+    transform: translateY(-140%);
+}
+.skip-link:focus-visible { transform: translateY(0); }
+
+/* ─── HERO ─── */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: end;
+    background: var(--deep);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 56%;
+    opacity: 0.35;
+    filter: saturate(0.6);
+}
+
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        var(--deep) 0%,
+        rgba(11, 26, 43, 0.85) 30%,
+        rgba(11, 26, 43, 0.4) 60%,
+        rgba(11, 26, 43, 0.7) 100%
+    );
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: var(--max);
+    margin-inline: auto;
+    padding: 0 0 4rem;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(0, 133, 124, 0.15);
+    border: 1px solid rgba(0, 179, 166, 0.3);
+    color: var(--accent-glow);
+    padding: 0.3rem 0.72rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+
+.hero h1 {
+    margin-top: 1.2rem;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: var(--accent-glow);
+}
+
+.hero-sub {
+    margin-top: 1rem;
+    font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 52ch;
+    line-height: 1.5;
+}
+
+.hero-meta {
+    margin-top: 2.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.hero-meta-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.9rem;
+    backdrop-filter: blur(8px);
+}
+
+.hero-meta-item dt {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-glow);
+}
+
+.hero-meta-item dd {
+    margin-top: 0.15rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+
+.hero-scroll::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0.5rem auto 0;
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* ─── NAV BAR ─── */
+.story-nav {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(245, 241, 235, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(214, 207, 196, 0.6);
+    padding: 0.65rem 0;
+}
+
+.story-nav-inner {
+    width: var(--max);
+    margin-inline: auto;
+    display: flex;
+    gap: 0.35rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding-bottom: 0.15rem;
+}
+
+.story-nav a {
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0.32rem 0.62rem;
+    transition: all 180ms ease;
+}
+
+.story-nav a:hover {
+    color: var(--accent);
+    background: rgba(0, 133, 124, 0.08);
+    border-color: rgba(0, 133, 124, 0.2);
+}
+
+/* ─── MAIN ─── */
+main { padding: 1rem 0 3rem; }
+
+/* ─── SECTION LAYOUT ─── */
+.section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.section:last-child { border-bottom: none; }
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.section-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+}
+
+.section-intro {
+    max-width: 68ch;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+}
+
+/* ─── PRINCIPLE CHIPS ─── */
+.principles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.principles li {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── CALLOUT ─── */
+.callout {
+    position: relative;
+    background: var(--deep);
+    color: #ffffff;
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.callout::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent-glow);
+    border-radius: 4px 0 0 4px;
+}
+
+/* ─── METRICS ─── */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.metric {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.3rem 1.1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.metric:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.metric-value {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.metric-label {
+    margin-top: 0.3rem;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.35;
+}
+
+/* ─── CHALLENGE TABLE ─── */
+.challenge-grid {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.challenge-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+
+.challenge-row .ch-left {
+    background: #fdf6f4;
+    padding: 1rem 1.1rem;
+    border-right: 1px solid var(--line);
+    font-size: 0.92rem;
+    color: #5a3020;
+}
+
+.challenge-row .ch-right {
+    background: #f0faf9;
+    padding: 1rem 1.1rem;
+    font-size: 0.92rem;
+    color: #1a4a44;
+}
+
+.challenge-row strong {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+}
+
+.ch-left strong { color: var(--coral); }
+.ch-right strong { color: var(--accent); }
+
+.challenge-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 0.3rem;
+}
+
+.challenge-header span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1.1rem;
+}
+
+.challenge-header span:first-child { color: var(--coral); }
+.challenge-header span:last-child { color: var(--accent); }
+
+/* ─── SECTOR TABLE ─── */
+.sector-cards {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.sector-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 200ms ease;
+}
+
+.sector-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.sector-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--deep);
+    padding-top: 0.1rem;
+}
+
+.sector-detail {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+}
+
+.sector-detail-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 0.25rem;
+}
+
+/* ─── TOOLKIT GRID (BENTO) ─── */
+.bento {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.bento-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.3rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.bento-card.featured {
+    background: var(--deep);
+    color: #ffffff;
+    border-color: var(--deep);
+    grid-column: 1 / -1;
+}
+
+.bento-card.featured h3 { color: var(--accent-glow); }
+.bento-card.featured p { color: rgba(255, 255, 255, 0.75); }
+.bento-card.featured li { color: rgba(255, 255, 255, 0.8); }
+.bento-card.featured li::before { color: var(--accent-glow); }
+
+.bento-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
+}
+
+.bento-card p {
+    margin: 0.3rem 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
+.bento-card ul { display: grid; gap: 0.4rem; }
+
+.bento-card li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+}
+
+.bento-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* ─── PHASE ROADMAP ─── */
+.roadmap-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 1.2rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+
+.phase-card {
+    padding: 1.6rem 1.4rem;
+    background: var(--paper);
+    border-right: 1px solid var(--line);
+}
+
+.phase-card:last-child { border-right: none; }
+
+.phase-card.phase-1 { border-top: 4px solid var(--accent); }
+.phase-card.phase-2 { border-top: 4px solid var(--gold); }
+.phase-card.phase-3 { border-top: 4px solid var(--coral); }
+
+.phase-time {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+}
+
+.phase-1 .phase-time { color: var(--accent); }
+.phase-2 .phase-time { color: var(--gold); }
+.phase-3 .phase-time { color: var(--coral); }
+
+.phase-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.phase-card ul { display: grid; gap: 0.45rem; }
+
+.phase-card li {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+}
+
+.phase-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ink-muted);
+}
+
+/* ─── GALLERY ─── */
+.gallery-section {
+    background: var(--deep);
+    margin: 0 calc(-50vw + 50%) ;
+    padding: 4.5rem calc(50vw - 50%);
+}
+
+.gallery-section .section-num { background: var(--accent-glow); }
+.gallery-section .section-tag { color: rgba(255, 255, 255, 0.5); }
+.gallery-section h2 { color: #ffffff; }
+.gallery-section .section-intro { color: rgba(255, 255, 255, 0.6); }
+
+.photo-mosaic {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0.65rem;
+}
+
+.photo-tile {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-tile img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 500ms ease;
+}
+
+.photo-tile:hover img { transform: scale(1.04); }
+
+.photo-tile figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem 0.8rem 0.65rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.photo-tile.tile-hero { grid-column: span 12; }
+.photo-tile.tile-hero img { aspect-ratio: 21 / 9; }
+.photo-tile.tile-half { grid-column: span 6; }
+.photo-tile.tile-third { grid-column: span 4; }
+
+.focus-group { object-position: 50% 58%; }
+.focus-room-wide { object-position: 50% 52%; }
+.focus-speaker-main { object-position: 56% 50%; }
+.focus-waterfront { object-position: 52% 60%; }
+.focus-sunset-bay { object-position: 50% 65%; }
+.focus-red-tree { object-position: 42% 58%; }
+
+/* ─── RESOURCES ─── */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+}
+
+.resource-item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    transition: all 180ms ease;
+}
+
+.resource-item:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 133, 124, 0.08);
+}
+
+.resource-item a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+}
+
+.resource-item a::before {
+    content: "↓";
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(0, 133, 124, 0.08);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.resource-item:hover a::before {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+/* ─── TECHNICAL NOTE ─── */
+.tech-note {
+    margin-top: 2rem;
+    padding: 1rem 1.2rem;
+    background: var(--bg-alt);
+    border-radius: var(--radius-sm);
+    font-size: 0.84rem;
+    color: var(--ink-muted);
+    line-height: 1.55;
+}
+
+/* ─── FOOTER ─── */
+footer {
+    padding: 1.2rem 0 2rem;
+}
+
+footer p {
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1000px) {
+    .sector-card {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    .sector-name { font-size: 1.05rem; }
+    .sector-detail-label { margin-top: 0.2rem; }
+    .metrics-row { grid-template-columns: repeat(2, 1fr); }
+    .roadmap-track { grid-template-columns: 1fr; }
+    .phase-card { border-right: none; border-bottom: 1px solid var(--line); }
+    .phase-card:last-child { border-bottom: none; }
+    .resource-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+    .hero { min-height: auto; min-height: auto; padding-top: 8rem; }
+    .hero-inner { padding-bottom: 2rem; }
+    .hero-scroll { display: none; }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .hero-meta { flex-direction: column; gap: 0.5rem; }
+
+    .section { padding: 2.5rem 0; }
+    .section h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+    .section-intro { font-size: 0.97rem; }
+
+    .metrics-row { grid-template-columns: 1fr; }
+
+    .challenge-row {
+        grid-template-columns: 1fr;
+    }
+    .challenge-row .ch-left { border-right: none; border-bottom: 1px solid var(--line); }
+    .challenge-header { grid-template-columns: 1fr; }
+
+    .bento { grid-template-columns: 1fr; }
+    .bento-card.featured { grid-column: auto; }
+
+    .quick-wins-list { grid-template-columns: 1fr !important; }
+
+    .photo-mosaic { grid-template-columns: 1fr; }
+    .photo-tile.tile-hero,
+    .photo-tile.tile-half,
+    .photo-tile.tile-third { grid-column: auto; }
+    .photo-tile.tile-hero img { aspect-ratio: 4 / 3; }
+
+    .gallery-section {
+        margin: 0 calc(-50vw + 50%);
+        padding: 3rem calc(50vw - 50%);
+    }
+
+    .story-nav a {
+        font-size: 0.76rem;
+        padding: 0.28rem 0.52rem;
+    }
+
+    .resource-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: clamp(1.9rem, 11vw, 2.6rem); }
+    .hero-eyebrow { font-size: 0.65rem; }
+    .hero-sub { font-size: 0.95rem; }
+    .section { padding: 2rem 0; }
+    .metric { padding: 0.9rem 0.8rem; }
+    .metric-value { font-size: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .photo-tile img { transition: none; }
+    .hero-scroll::after { animation: none; }
+}
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- ─── HERO ─── -->
+    <header class="hero" id="top">
+        <div class="hero-bg">
+            <img src="./story-images/596203976_25217043601249494_4784991979117192629_n.jpg"
+                alt="" width="1400" height="1400"
+                fetchpriority="high" decoding="async" />
+        </div>
+        <div class="hero-inner">
+            <p class="hero-eyebrow">UN DESA &times; Government of Solomon Islands</p>
+            <h1>Digitalizing<br>Solomon <em>Islands</em></h1>
+            <p class="hero-sub">From fragmented digitalization to whole-of-government transformation. A strategic workshop roadmap synthesized in Honiara.</p>
+            <dl class="hero-meta" aria-label="Workshop details">
+                <div class="hero-meta-item">
+                    <dt>Date</dt>
+                    <dd>4-5 December 2025</dd>
+                </div>
+                <div class="hero-meta-item">
+                    <dt>Location</dt>
+                    <dd>Honiara, Solomon Islands</dd>
+                </div>
+                <div class="hero-meta-item">
+                    <dt>Mandate</dt>
+                    <dd>Policy 8.1.7 &mdash; Whole-of-Government</dd>
+                </div>
+                <div class="hero-meta-item">
+                    <dt>Outcome</dt>
+                    <dd>Implementation roadmap</dd>
+                </div>
+            </dl>
+        </div>
+        <a class="hero-scroll" href="#main-content">Scroll</a>
+    </header>
+
+    <!-- ─── NAV ─── -->
+    <nav class="story-nav" aria-label="Story navigation">
+        <div class="story-nav-inner">
+            <a href="#mandate">Mandate</a>
+            <a href="#connectivity">Connectivity</a>
+            <a href="#sectors">Sectors</a>
+            <a href="#toolkits">UNDESA Toolkits</a>
+            <a href="#governance">Data &amp; AI</a>
+            <a href="#institutions">Institutions</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#resources">Resources</a>
+        </div>
+    </nav>
+
+    <!-- ─── MAIN ─── -->
+    <main id="main-content" class="wrap">
+
+        <!-- 01 MANDATE -->
+        <section id="mandate" class="section">
+            <div class="section-label">
+                <span class="section-num">1</span>
+                <span class="section-tag">Executive Mandate</span>
+            </div>
+            <h2>Transformation,<br>Not Digitized Paperwork</h2>
+            <p class="section-intro">
+                The workshop drew a hard line between digitalization and digital transformation.
+                Digitalization converts paper workflows into screens; transformation redesigns state operating
+                models so services are faster, interoperable, and citizen-centered.
+            </p>
+            <p class="section-intro">
+                The Solomon Islands Government and UNDESA aligned on a Whole-of-Government trajectory: no more
+                siloed ministry systems, no more fragmented data ownership, and no more duplicated identity
+                paperwork for citizens.
+            </p>
+            <ul class="principles" aria-label="Core principles">
+                <li>Transformation over digitized paperwork</li>
+                <li>Once-Only service logic across ministries</li>
+                <li>National coordination, local inclusion</li>
+            </ul>
+            <div class="callout">
+                Digital transformation is now a governance mandate, not a standalone ICT project.
+            </div>
+        </section>
+
+        <!-- 02 CONNECTIVITY -->
+        <section id="connectivity" class="section">
+            <div class="section-label">
+                <span class="section-num">2</span>
+                <span class="section-tag">Foundational Layer</span>
+            </div>
+            <h2>Connectivity Defines<br>State Reach</h2>
+            <p class="section-intro">
+                Connectivity defines state reach across hundreds of islands. The SINBIP backbone is progressing,
+                but service inclusion still depends on affordability, digital literacy, and resilient hybrid infrastructure.
+            </p>
+
+            <div class="metrics-row" aria-label="Infrastructure metrics">
+                <div class="metric">
+                    <div class="metric-value">161</div>
+                    <div class="metric-label">Broadband towers planned nationally</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">58</div>
+                    <div class="metric-label">Towers currently operational</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">82-85%</div>
+                    <div class="metric-label">Target population coverage by late 2025</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">67.2%</div>
+                    <div class="metric-label">Mobile penetration rate</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">42%</div>
+                    <div class="metric-label">Internet users (~358,000 citizens)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">10</div>
+                    <div class="metric-label">Provincial telecentre nodes</div>
+                </div>
+            </div>
+
+            <div class="challenge-header">
+                <span>Current Challenges</span>
+                <span>Strategic Opportunities</span>
+            </div>
+            <div class="challenge-grid">
+                <div class="challenge-row">
+                    <div class="ch-left">
+                        <strong>Challenge</strong>
+                        Fragmented data silos: 200+ isolated systems with weak interoperability.
+                    </div>
+                    <div class="ch-right">
+                        <strong>Opportunity</strong>
+                        SINBIP catalyst: infrastructure rollout enabling joined-up digital services.
+                    </div>
+                </div>
+                <div class="challenge-row">
+                    <div class="ch-left">
+                        <strong>Challenge</strong>
+                        Human capital constraints: limited ICT capacity across 22,000+ public servants.
+                    </div>
+                    <div class="ch-right">
+                        <strong>Opportunity</strong>
+                        Leapfrogging: cloud-native and AI-first systems without legacy debt.
+                    </div>
+                </div>
+                <div class="challenge-row">
+                    <div class="ch-left">
+                        <strong>Challenge</strong>
+                        Legislative gaps: privacy, AI, cybercrime, and e-transactions not fully anchored.
+                    </div>
+                    <div class="ch-right">
+                        <strong>Opportunity</strong>
+                        UNDESA framework: rigorous baselining for the 2026 EGDI cycle.
+                    </div>
+                </div>
+                <div class="challenge-row">
+                    <div class="ch-left">
+                        <strong>Challenge</strong>
+                        High service delivery costs: provincial circuits and manual processing remain expensive.
+                    </div>
+                    <div class="ch-right">
+                        <strong>Opportunity</strong>
+                        Remote delivery: telecentres, digital justice, and remote sector workflows.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 SECTORS -->
+        <section id="sectors" class="section">
+            <div class="section-label">
+                <span class="section-num">3</span>
+                <span class="section-tag">Sector Priorities</span>
+            </div>
+            <h2>Operational Pain Points First</h2>
+            <p class="section-intro">
+                Sectoral transformation must target operational pain points first. The matrix below merges both
+                synthesis papers into one implementation lens.
+            </p>
+
+            <div class="sector-cards">
+                <div class="sector-card">
+                    <div class="sector-name">Finance / ERU</div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Bottleneck</span>
+                        Manual macro-data dissemination and weak public reporting visibility.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Intervention</span>
+                        Central economic portal and live macro dashboard.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Impact</span>
+                        Transparency, forecasting quality, and trust in fiscal governance.
+                    </div>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-name">Health</div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Bottleneck</span>
+                        Paper transfer from rural clinics; fragmented facility-level records.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Intervention</span>
+                        DHIS2 modernization + Master Patient Index + focused indicator set.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Impact</span>
+                        Real-time public health visibility and better patient outcomes.
+                    </div>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-name">Justice / Judiciary</div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Bottleneck</span>
+                        Physical circuits costing 70k-80k per trip with paper-heavy case flows.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Intervention</span>
+                        Remote hearings + digital JIMS + smart evidence workflows.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Impact</span>
+                        Cost reduction, faster case disposal, and rural justice inclusion.
+                    </div>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-name">Police / Maritime</div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Bottleneck</span>
+                        Manual testing and incomplete EEZ/UXO digital tracking.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Intervention</span>
+                        Satellite mapping + CPLT integration + IMSMA Core UXO data.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Impact</span>
+                        Stronger national security and safer operational planning.
+                    </div>
+                </div>
+                <div class="sector-card">
+                    <div class="sector-name">Foreign Affairs</div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Bottleneck</span>
+                        Paper-based labor mobility and diaspora processes.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Intervention</span>
+                        Online visa/passport services + diaspora registry + e-procurement.
+                    </div>
+                    <div class="sector-detail">
+                        <span class="sector-detail-label">Impact</span>
+                        Global integration and improved mobility governance.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 TOOLKITS -->
+        <section id="toolkits" class="section">
+            <div class="section-label">
+                <span class="section-num">4</span>
+                <span class="section-tag">UNDESA Toolkits</span>
+            </div>
+            <h2>Frameworks for Action</h2>
+
+            <div class="bento">
+                <article class="bento-card">
+                    <h3>National E-Government Toolkit</h3>
+                    <ul>
+                        <li>Benchmark Solomon Islands against regional peers through the data portal.</li>
+                        <li>Audit institutional and legal readiness for national data administration.</li>
+                        <li>Measure whether services are transactional, not only informational.</li>
+                        <li>Assess e-participation quality for real public consultation.</li>
+                    </ul>
+                </article>
+                <article class="bento-card">
+                    <h3>Local Government Toolkit (LOSI)</h3>
+                    <ul>
+                        <li>Deploy in Auki, Gizo, and Lata to prevent urban-only digital growth.</li>
+                        <li>Use "digital twin" planning for infrastructure and disaster response simulations.</li>
+                        <li>Align provincial service design with local delivery realities and risks.</li>
+                    </ul>
+                </article>
+                <article class="bento-card featured">
+                    <h3>Critical Operational Constraints</h3>
+                    <ul>
+                        <li>Interoperability gaps across ministries block Once-Only service logic.</li>
+                        <li>Government ICT talent attrition to private sector continues.</li>
+                        <li>Budget pressure requires high-ROI, low-legacy solutions.</li>
+                        <li>Dual digital-analog safeguards are essential for climate-shock resilience.</li>
+                    </ul>
+                </article>
+                <article class="bento-card" style="grid-column: 1 / -1;">
+                    <h3>Quick Wins Identified in Workshop</h3>
+                    <ul class="quick-wins-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem 2rem;">
+                        <li>Telecentre expansion as practical last-mile access hubs.</li>
+                        <li>Remote justice sessions to replace expensive physical circuits.</li>
+                        <li>AI-assisted administrative workflows to reduce manual overhead.</li>
+                        <li>Targeted literacy and role-based digital skills in all provinces.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 05 DATA GOVERNANCE -->
+        <section id="governance" class="section">
+            <div class="section-label">
+                <span class="section-num">5</span>
+                <span class="section-tag">Data Governance &amp; AI</span>
+            </div>
+            <h2>Data Is the Ingredient</h2>
+            <p class="section-intro">
+                Compute is the fire, algorithms are the recipe, but data is the ingredient.
+                Without clean, governed, shared data, AI cannot produce public value.
+            </p>
+
+            <div class="bento">
+                <article class="bento-card">
+                    <h3>Three-Tier Data Classification</h3>
+                    <ul>
+                        <li><strong>White (Open):</strong> public datasets for transparency and innovation.</li>
+                        <li><strong>Grey (Conditional):</strong> ministry-to-ministry exchange under clear MOUs.</li>
+                        <li><strong>Black (Confidential):</strong> high-security and personal data with strict controls.</li>
+                    </ul>
+                </article>
+                <article class="bento-card">
+                    <h3>Shanghai-Informed Operating Model</h3>
+                    <p><strong>Internal sharing</strong> to dismantle ministerial territorialism, plus <strong>open data</strong> to enable citizen and private-sector services.</p>
+                    <p>Example: transport, parking, and service location datasets can seed local app ecosystems.</p>
+                </article>
+                <article class="bento-card">
+                    <h3>Legislative Fast-Track</h3>
+                    <ul>
+                        <li>Electronic Government Act</li>
+                        <li>Data Privacy / Data Protection framework</li>
+                        <li>Cybercrime Bill</li>
+                        <li>AI governance policy</li>
+                    </ul>
+                </article>
+                <article class="bento-card">
+                    <h3>AI-Ready Principle</h3>
+                    <p>Compute is the fire, algorithms are the recipe, but data is the ingredient. Without clean, governed, shared data, AI cannot produce public value.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 06 INSTITUTIONS -->
+        <section id="institutions" class="section">
+            <div class="section-label">
+                <span class="section-num">6</span>
+                <span class="section-tag">Institutions &amp; People</span>
+            </div>
+            <h2>Coordination Architecture</h2>
+
+            <div class="bento">
+                <article class="bento-card">
+                    <h3>National Coordination Architecture</h3>
+                    <ul>
+                        <li>National Digital Transformation Board as apex authority.</li>
+                        <li>MCA as national technical standards lead (CIO function).</li>
+                        <li>Permanent Secretaries accountable for delivery benchmarks.</li>
+                    </ul>
+                </article>
+                <article class="bento-card">
+                    <h3>Human-Centered Change Logic</h3>
+                    <ul>
+                        <li>Reward service outcomes, not paper compliance.</li>
+                        <li>Enable practical innovation cycles: prove value early.</li>
+                        <li>Link transformation incentives to real family and community impact.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 07 ROADMAP -->
+        <section id="roadmap" class="section">
+            <div class="section-label">
+                <span class="section-num">7</span>
+                <span class="section-tag">Implementation Roadmap</span>
+            </div>
+            <h2>Three Phases to<br>National Transformation</h2>
+            <p class="section-intro">
+                The two synthesis papers converge on a three-phase implementation path that is practical,
+                low-legacy, and inclusion-driven.
+            </p>
+
+            <div class="roadmap-track" aria-label="Phased implementation roadmap">
+                <article class="phase-card phase-1">
+                    <span class="phase-time">0-12 Months</span>
+                    <h3>Foundation</h3>
+                    <ul>
+                        <li>Stand up national data and transformation governance.</li>
+                        <li>Complete UNDESA national and LOSI baseline assessments.</li>
+                        <li>Prioritize legal anchors for e-government and cyber trust.</li>
+                    </ul>
+                </article>
+                <article class="phase-card phase-2">
+                    <span class="phase-time">1-3 Years</span>
+                    <h3>Integration</h3>
+                    <ul>
+                        <li>Launch national data exchange to reduce silo duplication.</li>
+                        <li>Operationalize MPI and digital justice service pathways.</li>
+                        <li>Scale province-level digital literacy and role-based training.</li>
+                    </ul>
+                </article>
+                <article class="phase-card phase-3">
+                    <span class="phase-time">3+ Years</span>
+                    <h3>Transformation</h3>
+                    <ul>
+                        <li>Adopt AI-driven policy analytics and disaster forecasting.</li>
+                        <li>Transition to cloud-native architecture and efficient data centers.</li>
+                        <li>Institutionalize Once-Only service delivery nationally.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="callout" style="margin-top: 1.4rem;">
+                Executive call: inaction means expensive isolation from the digital economy. Coordinated implementation is now the national priority.
+            </div>
+        </section>
+    </main>
+
+    <!-- 08 GALLERY (full-bleed dark) -->
+    <section id="gallery" class="gallery-section">
+        <div class="wrap">
+            <div class="section-label">
+                <span class="section-num">8</span>
+                <span class="section-tag">Visual Story</span>
+            </div>
+            <h2>Honiara, December 2025</h2>
+            <p class="section-intro">
+                Field and workshop visuals curated to highlight group participation, delivery context,
+                and Solomon Islands place-based realities.
+            </p>
+
+            <div class="photo-mosaic">
+                <figure class="photo-tile tile-hero">
+                    <img class="focus-group" src="./story-images/596203976_25217043601249494_4784991979117192629_n.jpg"
+                        alt="Group photo of workshop participants in Honiara" width="1400" height="1400" loading="lazy"
+                        decoding="async" />
+                    <figcaption>Collective ownership across ministries and partners.</figcaption>
+                </figure>
+                <figure class="photo-tile tile-half">
+                    <img class="focus-room-wide" src="./story-images/IMG_20251205_111126698.jpg"
+                        alt="Workshop participants seated in roundtable format" width="1400" height="1050" loading="lazy"
+                        decoding="async" />
+                    <figcaption>Cross-ministerial policy and implementation dialogue.</figcaption>
+                </figure>
+                <figure class="photo-tile tile-half">
+                    <img class="focus-speaker-main" src="./story-images/IMG_20251204_122815788.jpg"
+                        alt="Session speaker presenting digital government model" width="1400" height="1052" loading="lazy"
+                        decoding="async" />
+                    <figcaption>Strategic model translation into operational pathways.</figcaption>
+                </figure>
+                <figure class="photo-tile tile-third">
+                    <img class="focus-waterfront" src="./story-images/IMG_20251202_184117838.jpg"
+                        alt="Honiara waterfront at dusk" width="1400" height="1050" loading="lazy" decoding="async" />
+                    <figcaption>Coastal context reinforcing resilient service design.</figcaption>
+                </figure>
+                <figure class="photo-tile tile-third">
+                    <img class="focus-sunset-bay" src="./story-images/IMG_20251202_184134138.jpg"
+                        alt="Sunset over Honiara shoreline and breakwater" width="1400" height="1050" loading="lazy"
+                        decoding="async" />
+                    <figcaption>Digital access must reach every island community.</figcaption>
+                </figure>
+                <figure class="photo-tile tile-third">
+                    <img class="focus-red-tree" src="./story-images/IMG_20251202_184157128.jpg"
+                        alt="Flowering tree and seaside walkway at dusk" width="1400" height="1050" loading="lazy"
+                        decoding="async" />
+                    <figcaption>People, place, and public service futures.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- 09 RESOURCES -->
+    <section id="resources" class="section wrap">
+        <div class="section-label">
+            <span class="section-num">9</span>
+            <span class="section-tag">Resources &amp; Technical Note</span>
+        </div>
+        <h2>Downloads</h2>
+        <p class="section-intro">Workshop documentation and reference materials.</p>
+
+        <ul class="resource-grid">
+            <li class="resource-item"><a href="./downloads/Agenda_Solomon Isands_21102025_v2.docx" download>Workshop Agenda (DOCX)</a></li>
+            <li class="resource-item"><a href="./downloads/2025 UNPSF Workshop _DGB_Concept Note_v.01.docx" download>Concept Note (DOCX)</a></li>
+            <li class="resource-item"><a href="./downloads/The_Forged_Code.pdf" download>The Forged Code (PDF)</a></li>
+            <li class="resource-item"><a href="./downloads/The_Practice_of_Purpose.pdf" download>The Practice of Purpose (PDF)</a></li>
+            <li class="resource-item"><a href="./downloads/Hat_Yai_Drone_Response_Strategy.pdf" download>Hat Yai Drone Response Strategy (PDF)</a></li>
+            <li class="resource-item"><a href="./downloads/Solomon Islands' Digital Transformation.png" download>Digital Transformation Visual (PNG)</a></li>
+        </ul>
+
+        <p class="tech-note">
+            Built with Codex and manually edited by the workshop team. This page is intentionally lightweight
+            for weak internet conditions in distributed island contexts: static HTML/CSS, no JavaScript dependency,
+            compressed photos, and mobile-first layout.
+        </p>
+    </section>
+
+    <footer class="wrap">
+        <p>Prepared from workshop facilitation outputs, sector discussions, and UNDESA toolkit synthesis. Honiara, Solomon Islands, December 2025.</p>
+    </footer>
+</body>
+
+</html>

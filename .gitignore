@@ -1,0 +1,16 @@
+node_modules
+dist
+.DS_Store
+
+# Large media – keep on OneDrive, not in Git
+public/all_images
+public/images
+public/downloads/*.mp4
+public/downloads/*.m4a
+public/downloads/*.png
+public/downloads/*.pdf
+
+# Root-level symlinks (real files are in public/)
+/all_images
+/downloads
+/story-images
