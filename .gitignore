@@ -14,3 +14,5 @@ public/downloads/*.pdf
 /all_images
 /downloads
 /story-images
+
+.wrangler/
