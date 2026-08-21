@@ -16,3 +16,8 @@ public/downloads/*.pdf
 /story-images
 
 .wrangler/
+
+# env files
+.env
+.env.*
+!.env.example
